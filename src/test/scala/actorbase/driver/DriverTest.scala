@@ -1,3 +1,5 @@
+package actorbase.driver
+
 /*
  * The MIT License (MIT)
  * <p/>
@@ -28,7 +30,7 @@
  */
 
 import java.io._
-import java.net.{Socket, ServerSocket}
+import java.net.{ServerSocket, Socket}
 
 import org.scalamock.scalatest.MockFactory
 import org.scalatest.{FlatSpec, Matchers}
@@ -127,7 +129,7 @@ class DriverTest  extends FlatSpec with Matchers with MockFactory{
     conn should be (null)
   }
 
-  "ConcreteConnection executeQuery method" should "send a correct string to server" in {
+  "actorbase.client.ConcreteConnection executeQuery method" should "send a correct string to server" in {
     val randomQuery:String = "a query"
     Thread.sleep(1000)
     val thread:Thread = new Thread(new FakeServer(randomQuery))
